@@ -27,9 +27,10 @@ class OneTimePasswordManager implements OneTimePasswordManagerInterface
 
     /**
      * @param $hash
+     * @param string $username
      * @return OneTimePassword|void
      */
-    public function create($hash)
+    public function create($hash, $username)
     {
         throw new \BadMethodCallException('Service Provider can\'t create OTP tokens.');
     }

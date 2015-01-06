@@ -34,6 +34,27 @@ class OneTimePassword
     protected $created;
 
     /**
+     * @var string $username
+     */
+    protected $username;
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    /**
      * Get id
      *
      * @return integer

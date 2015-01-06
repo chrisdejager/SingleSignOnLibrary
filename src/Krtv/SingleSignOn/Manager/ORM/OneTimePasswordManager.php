@@ -35,10 +35,11 @@ class OneTimePasswordManager implements OneTimePasswordManagerInterface
 
     /**
      * @param $hash
+     * @param string $username
      * @return string
      * @throws \Exception
      */
-    public function create($hash)
+    public function create($hash, $username)
     {
         $otp = $this->entityManager->getRepository($this->class)->findByHash($hash);
         if (!empty($otp)) {
@@ -63,6 +64,7 @@ class OneTimePasswordManager implements OneTimePasswordManagerInterface
                 $otp->setPassword($pass);
                 $otp->setUsed(false);
                 $otp->setCreated(new \DateTime());
+                $otp->setUsername($username);
 
                 $this->entityManager->persist($otp);
                 $this->entityManager->flush();
