@@ -39,6 +39,27 @@ class OneTimePassword
     protected $username;
 
     /**
+     * @var string $serviceUrl
+     */
+    protected $serviceUrl;
+
+    /**
+     * @return string
+     */
+    public function getServiceUrl()
+    {
+        return $this->serviceUrl;
+    }
+
+    /**
+     * @param string $serviceUrl
+     */
+    public function setServiceUrl($serviceUrl)
+    {
+        $this->serviceUrl = $serviceUrl;
+    }
+
+    /**
      * @return string
      */
     public function getUsername()

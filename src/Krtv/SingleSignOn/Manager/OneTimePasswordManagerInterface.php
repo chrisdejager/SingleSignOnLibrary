@@ -15,9 +15,10 @@ interface OneTimePasswordManagerInterface
      *
      * @param $hash
      * @param string $username
+     * @param string $serviceUrl
      * @return OneTimePassword
      */
-    public function create($hash, $username);
+    public function create($hash, $username, $serviceUrl);
 
     /**
      * Fetch OTP
